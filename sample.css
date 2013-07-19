@@ -1,0 +1,91 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    padding-left: 0px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    background: url("http://www.iprolens.com/images/fixed-nav-bg.jpg") repeat-y scroll 0 202px transparent;
+    font-size: 15px;
+    color: #333333;
+}
+
+@media (max-width: 979px) {
+    body {
+        background: none;
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.sidebar-nav-fixed #nav-submenu {
+    background: url("../images/sub-menu-bg.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/sub-menu-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../images/sub-menu-bg.jpg', sizingMethod='scale')";
+    padding: 5px 0;
+}
+
+#exampleItems .over-arching .name.on {
+    background: url('../images/dark_gradient_background.png') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.rotate {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.open-responsive-menu {
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    z-index: 10;
+    background: url(../images/nav.png);
+    left: 0px;
+    margin-left: 293px;
+    cursor: pointer;
+}
+
+.video-overlay-button {
+    background: url("../images/btnVideoPlay.png") no-repeat scroll 0 0 transparent;
+    height: 100px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    background-size: 100%;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    -webkit-opacity: 0.5;
+    opacity: 0.5;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+filter: alpha(opacity=50);
+}
+
+.image-lens-title {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    line-height: 28px;
+    background-color: grey;
+    zoom: 1;
+    -moz-opacity: 0.95;
+    -khtml-opacity: 0.95;
+    -webkit-opacity: 0.95;
+    opacity: 0.95;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
+    filter: alpha(opacity=95);
+}
