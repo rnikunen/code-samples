@@ -7,7 +7,7 @@ Recent Projects
 
 http://iprolens.com/- Lead Developer of this project. Created backend via PHP and implemented responsive frontend utilizing Twitter Boostrap. Wrote back-end process to pull client specific Instagram feed via API. 
 
-http://taylormadegolf.com/adidasgolf/adizero.html - Fronten work taking Photoshop files and implimenting in HTML5/CSS3 standards adding animation elements.
+http://taylormadegolf.com/adidasgolf/adizero.html - Frontend work taking Photoshop files and implimenting in HTML5/CSS3 standards adding animation elements.
 
 http://content.redbullusa.com/projectx/ - /Home_Page- Created backend code for this site utilizing PHP and advised Flash developers on various aspects on site interactions.
 
