@@ -21,4 +21,4 @@ Node.js Samples
 
 https://github.com/rnikunen/shelters-api.thebarkreport.com-master - Work in Progress.  JSON API server with LA County Data.
 
-https://github.com/rnikunen/thebarkreport.com-master - Work in Progress. Node.js server to prsent website pulling data from the JSON API.
+https://github.com/rnikunen/thebarkreport.com-master - Work in Progress. Node.js server to present website pulling data from the JSON API.
