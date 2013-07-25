@@ -22,3 +22,7 @@ Node.js Samples
 https://github.com/rnikunen/shelters-api.thebarkreport.com-master - Work in Progress.  JSON API server with LA County Data.
 
 https://github.com/rnikunen/thebarkreport.com-master - Work in Progress. Node.js server to present website pulling data from the JSON API.
+
+myAdobe Projet
+
+Adobe-my-account.js - Javascript that handles all aspects of the "myInformation" section of Adobe.com. I worked on a two man team that deveoped this code. 
