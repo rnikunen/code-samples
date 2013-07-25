@@ -16,3 +16,9 @@ http://www.redbullusa.com/cs/Satellite/en_US/Red-Bull-Wake-Open-001243210499687 
 http://dev.kpamerica.net/redbull/flugtagusa/ - Original URL was redbullflugtagusa.com- Retooled existing site code from previous developer to add new functionality to Backend and implement Deep Webtrends linking
 
 http://score.redbullusa.com/- Multiple Sites no longer live as they were dated retail promotional sites for Red Bull.  Lead Developer on this project which implemented Zend PHP framework.  I primarily developed and continually added to the backend for each new unique Retail program.  Developed code base for a video conversion sever utilizing FFMPEG to convert user submitted content to HTML5 complient formats. Developed Mobile and web versions of entire image/video upload and voting system tied to a Facebook Login.
+
+Node.js Samples
+
+https://github.com/rnikunen/shelters-api.thebarkreport.com-master - Work in Progress.  JSON API server with LA County Data.
+
+https://github.com/rnikunen/thebarkreport.com-master - Work in Progress. Node.js server to prsent website pulling data from the JSON API.
