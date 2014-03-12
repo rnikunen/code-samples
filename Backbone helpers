@@ -1,0 +1,70 @@
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'views/utils/alert',
+    'helper'
+], function($, _, Backbone, AlertView){
+    var viewHelpers = Backbone.Helper.extend({
+        formatDate: function(date){
+            var yyyy = date.getFullYear().toString();
+            var mm = (date.getMonth()+1).toString(); // getMonth() is zero-based
+            var dd  = date.getDate().toString();
+
+            return (mm[1]?mm:"0"+mm[0]) + '/' + (dd[1]?dd:"0"+dd[0]) + '/' + yyyy;
+        },
+
+        padLeft: function(nr, n, str){
+            return Array(n-String(nr).length+1).join(str||'0')+nr;
+        },
+
+        /*
+         * COOKIE HELPERS
+         */
+        getCookie: function(c_name) {
+            var i, x, y, ARRcookies = document.cookie.split(";");
+
+            for (i = 0; i < ARRcookies.length; i++) {
+                x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                x = x.replace(/^\s+|\s+$/g,"");
+                if (x === c_name) {
+                    return unescape(y);
+                };
+            };
+        },
+
+        setCookie: function(c_name, value) {
+            var exdate = new Date();
+            exdate.setHours(exdate.getHours() + 1);
+            var c_value = escape(value) + "; expires=" + exdate.toUTCString();
+            document.cookie=c_name + "=" + c_value;
+        },
+
+        showErrors: function(title, errors) {
+            var errorMessage = title + ' has not been saved.'
+            _.each(errors, function (error) {
+                errorMessage += '<br>' + error
+            }, this);
+            this.showAlert('#page-alert','Error',errorMessage,'danger');
+        },
+
+        showAlert: function (el,title, message, alertType) {
+            var alert = new AlertView({
+                alert: alertType,
+                title: title,
+                message: message,
+                fixed: true
+            });
+
+            $(el).html(alert.render().el);
+
+            window.setTimeout(function () {
+                alert.remove();
+            }, 8000);
+
+            return alert;
+        }
+    });
+    return viewHelpers;
+});
