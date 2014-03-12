@@ -5,6 +5,8 @@ Personal Code Samples are snippets from a couple proprietary projects for client
 
 Recent Projects
 
+http://www.grandchallenges.ucla.edu/ - Lead Developer of this project. Fully responsive Site.
+
 http://iprolens.com/- Lead Developer of this project. Created backend via PHP and implemented responsive frontend utilizing Twitter Boostrap. Wrote back-end process to pull client specific Instagram feed via API. 
 
 http://taylormadegolf.com/adidasgolf/adizero.html - Frontend work taking Photoshop files and implimenting in HTML5/CSS3 standards adding animation elements.
