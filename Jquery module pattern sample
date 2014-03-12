@@ -1,0 +1,96 @@
+	// Using the module pattern for a jQuery feature
+	$( document ).ready(function() {
+	
+		var modals = (function() {
+			var $items = $('div.panel-body');
+			var $container = $('#modal-template');
+			
+			var createContainer = function() {
+				var $i = $( this );
+				var $id = $i.data('section');
+				var $content = $i.html();
+				var $c = $container.clone();
+				$(".modal-body",$c).html($content);
+				
+				$c.on('show.bs.modal', function() {
+					$('.modal').modal('hide');
+					video.close();
+					$(this).css('opacity', 0); //Hide it to calulate height
+				});
+				$c.on('shown.bs.modal', function() {
+					var initModalHeight = $(this).children('.modal-dialog').outerHeight(); 
+					var userScreenHeight = $(window).height() //Height of Viewport
+			    if (initModalHeight > userScreenHeight) {
+			        $(this).children('.modal-dialog').css('overflow', 'auto'); //set to overflow if no fit
+			    } else {
+			        $(this).children('.modal-dialog').css('margin-top', 
+			        (userScreenHeight / 2) - (initModalHeight/2)); //center it if it does fit
+			    }
+			    $c.css('opacity', 1); //Show it after positioned
+		    });
+
+				
+				
+				$c.attr('id',$id).appendTo( $('body') );			
+			}
+			
+			$items.each( createContainer );
+			
+		})();
+		
+		var video = (function() {
+			var $embed = $("#video-embed");
+			
+			var $container = $('.video-container');
+			var $main = $('#gc_carousel, #challenge-main');
+			var videoSrc = "//www.youtube.com/embed/DITouRhKW80?autoplay=1&modestbranding=1&showinfo=0&controls=1&feature=player_embedded";
+			
+			var click = function() {
+				if(!navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
+		    	$embed.attr('src',videoSrc); 
+		    	setTimeout( function() {
+				  	$container.show(); 
+						$main.hide();
+		    	}, 800);
+		    } else {
+			    window.location = videoSrc;
+		    }
+	    },
+	    close = function() {
+		    $embed.attr('src','');
+				$container.hide(); 
+				$main.show();	
+	    };
+
+	    $('.play-video').on('click',click);
+			$('.video-header > .close, .modal-toggle').on('click',close);
+			
+			return {
+				close: close
+				};
+	    
+		})();
+
+		var stream = (function() {
+			var click = function() {
+				if(!navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)) {
+		    	window.location = "http://www.youtube.com/watch?v=adjXeyd4c6A&list=LLy7mB_Vlh6fu1TaBYn-qNyQ&feature=mh_lolz"; 		    	
+		    } else {
+			    window.location = "http://164.67.141.39:8080/m3ugen/media/challenge1.mp4";
+		    }
+	    };
+
+	    $('.live-stream').on('click',click);
+	    
+		})();
+	
+		var init = (function() {
+				modals;
+				video;	
+				stream;
+				
+		})();
+		
+		init;
+
+	});
