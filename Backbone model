@@ -1,0 +1,81 @@
+define([
+    'underscore',
+    'backbone',
+    'helpers/helpers',
+    'bbvalidation'
+], function(_, Backbone, Helpers) {
+    var helper = new Helpers();
+    var punchcardModel = Backbone.Model.extend({
+        urlRoot: "/loyalty/api/merchantpunch",
+        idAttribute: 'uuid',
+        url: function() {
+            return this.urlRoot + '/findMerchantPunch/' + this.get("id");
+        },
+        defaults:{
+            "offerStartDate":"",
+            "offerType":"SET_AMOUNT",
+            "offerValue":null,
+            "punchType":"AMOUNT_SPENT",
+            "punchesRequired":6,
+            "spendPerPunch":"",
+            "spendRequired":"",
+            "finePrint":"",
+            "includeBonusStamp":false,
+            "active":false,
+            "deleted": false
+        },
+        validation: {
+            offerValue: {
+                required: true,
+                msg: 'Please enter redemption value'
+            }
+        },
+        drawPunchcard:function() {
+            var punches = this.get('punchesRequired');
+            var punchcardPreview = "<tr>"
+            for (var i = 1; i <= punches; i++) {
+                punchcardPreview += '<td class="punch_' + i +'"></td>';
+                if (i % 3 == 0) {
+                    punchcardPreview += "</tr>"
+                }
+            }
+            punchcardPreview += "</tr>"
+            return punchcardPreview;
+        },
+        offerStart: function() {
+            var date = new Date(this.get('offerStartDate'))
+            return helper.formatDate(date);
+        },
+        offerStatus: function() {
+            return (this.get('active')) ? '<strong>ACTIVE:</strong> ' + this.offerStart() : '<strong>INACTIVE:</strong> Draft';
+        },
+        offerType: function() {
+            var offerType = this.get('offerType');
+            var offerValue = this.get('offerValue');
+            return (offerType=="SET_AMOUNT") ?'&#36;' + offerValue :  offerValue + '&#37;';
+        },
+
+        save: function(attributes, options) {
+            options = _.defaults((options || {}), {url: this.urlRoot + "/updateMerchantPunch/"});
+            delete this.attributes.id;
+            delete this.attributes.silent;
+            return Backbone.Model.prototype.save.call(this, attributes, options);
+        },
+        create: function(attributes, options) {
+            options = _.defaults((options || {}), {url: this.urlRoot + "/addMerchantPunch/"});
+            delete this.attributes.id;
+            delete this.attributes.silent;
+            return Backbone.Model.prototype.save.call(this, attributes, options);
+        },
+        getMerchant: function(attribute){
+            var merchant = this.get("merchant") || {};
+            return merchant[attribute];
+        },
+        setMerchant: function(attributes){
+            var merchant = this.get("merchant") || {};
+            _.extend(merchant, attributes);
+            this.set({merchant:merchant});
+        }
+    });
+    return punchcardModel;
+});
