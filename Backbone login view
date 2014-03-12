@@ -1,0 +1,50 @@
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'helpers/helpers',
+    'text!templates/login/login.html',
+    'bootstrap'
+], function($, _, Backbone, Helpers, Template){
+    var Login = Backbone.View.extend({
+        el: '.login-content',
+        events: {
+            "click #login": "login"
+        },
+        login: function(){
+            var self = this;
+            var btoa = window.btoa;
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var token = btoa(unescape(encodeURIComponent([username, password].join(':'))));
+
+            Backbone.defaultSyncOptions = { headers: { 'Authorization': 'Basic ' + token } };
+            var helper = new Helpers();
+
+            require(['models/credentials'], function (CredentialsModel) {
+                var that = this;
+                var credentialsModel = new CredentialsModel({silent: true});
+                credentialsModel.fetch({
+                    success: function (data) {
+                        //Set merchant id for user
+                        Cookie.set('merchantUuid', data.attributes.uuid);
+                        Cookie.set('token', token);
+                        Cookie.set('loggedIn',true);
+                        window.location = 'index.html'
+                    },
+                    error: function(errors) {
+                        Cookie.unset('merchantUuid');
+                        Cookie.unset('token');
+                        Cookie.set('loggedIn',false);
+                        helper.showAlert('#page-alert','Error','Invalid username or password','Danger');
+                    }
+                });
+            });
+            return false;
+        },
+        render: function () {
+            $(this.el).append(Template);
+        }
+    });
+    return Login;
+});
