@@ -22,6 +22,14 @@ Code Samples
 
 Personal Code Samples are snippets from a couple proprietary projects for clients I have worked for.  They will not function together to be visible in a Browser and are meant to show code structure and competency.
 
+BackboneJS
+
+Various examples including a view, model and view helper
+
+JQuery
+
+Example of a module pattern in jQuery
+
 Node.js 
 
 https://github.com/rnikunen/shelters-api.thebarkreport.com-master - Work in Progress.  JSON API server with LA County Data.
@@ -31,3 +39,7 @@ https://github.com/rnikunen/thebarkreport.com-master - Work in Progress. Node.js
 myAdobe Projet
 
 Adobe-my-account.js - Javascript that handles all aspects of the "myInformation" section of Adobe.com. I worked on a two man team that deveoped this code. 
+
+PHP Example
+
+pull-instagram.php - Pulls Instagram feeds by tags with option of limiting results to single user and stores the results in a JSON File.
