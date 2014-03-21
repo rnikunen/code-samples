@@ -38,8 +38,8 @@ https://github.com/rnikunen/thebarkreport.com-master - Work in Progress. Node.js
 
 myAdobe Projet
 
-Adobe-my-account.js - Javascript that handles all aspects of the "myInformation" section of Adobe.com. I worked on a two man team that deveoped this code. 
+https://github.com/rnikunen/code-samples/blob/master/adobe-my-account.js - Javascript that handles all aspects of the "myInformation" section of Adobe.com. I worked on a two man team that deveoped this code. 
 
 PHP Example
 
-pull-instagram.php - Pulls Instagram feeds by tags with option of limiting results to single user and stores the results in a JSON File.
+https://github.com/rnikunen/code-samples/blob/master/pull-instagram.php - Pulls Instagram feeds by tags with option of limiting results to single user and stores the results in a JSON File.
