@@ -7,7 +7,7 @@ Recent Projects
 
 http://taylormadegolf.com/adidasgolf/adizero.html - Frontend work taking Photoshop files and implimenting in HTML5/CSS3 standards adding animation elements.
 
-http://content.redbullusa.com/projectx/ - /Home_Page- Created backend code for this site utilizing PHP and advised Flash developers on various aspects on site interactions.
+http://content.redbullusa.com/projectx/ - Created backend code for this site utilizing PHP and advised Flash developers on various aspects on site interactions.
 
 http://www.redbullusa.com/cs/Satellite/en_US/Red-Bull-Wake-Open-001243210499687 - Developer on this project. Created a Parallax Site with multiple animations. Actionscript of Flash Navigation elements. Requires high-speed Connection to view.
 
