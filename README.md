@@ -24,22 +24,26 @@ Personal Code Samples are snippets from a couple proprietary projects for client
 
 BackboneJS
 
-Various examples including a view, model and view helper
+Various examples including a view, model and view helper.
+
+Backbone View Helper: https://github.com/rnikunen/code-samples/blob/master/Backbone%20helpers
+Backbone View Example with Authentication: https://github.com/rnikunen/code-samples/blob/master/Backbone%20login%20view
+Backbone Model: https://github.com/rnikunen/code-samples/blob/master/Backbone%20model 
 
 JQuery
 
-Example of a module pattern in jQuery
+Example of a module pattern in jQuery:  https://github.com/rnikunen/code-samples/blob/master/Jquery%20module%20pattern%20sample
 
 Node.js 
 
-https://github.com/rnikunen/shelters-api.thebarkreport.com-master - Work in Progress.  JSON API server with LA County Data.
+Work in Progress.  JSON API server with LA County Data: https://github.com/rnikunen/shelters-api.thebarkreport.com-master
 
-https://github.com/rnikunen/thebarkreport.com-master - Work in Progress. Node.js server to present website pulling data from the JSON API.
+Work in Progress. Node.js server to present website pulling data from the JSON API: https://github.com/rnikunen/thebarkreport.com-master - 
 
 myAdobe Projet
 
-https://github.com/rnikunen/code-samples/blob/master/adobe-my-account.js - Javascript that handles all aspects of the "myInformation" section of Adobe.com. I worked on a two man team that deveoped this code. 
+Javascript that handles all aspects of the "myInformation" section of Adobe.com. I worked on a two man team that deveoped this code: https://github.com/rnikunen/code-samples/blob/master/adobe-my-account.js - 
 
 PHP Example
 
-https://github.com/rnikunen/code-samples/blob/master/pull-instagram.php - Pulls Instagram feeds by tags with option of limiting results to single user and stores the results in a JSON File.
+Pulls Instagram feeds by tags with option of limiting results to single user and stores the results in a JSON File: https://github.com/rnikunen/code-samples/blob/master/pull-instagram.php
